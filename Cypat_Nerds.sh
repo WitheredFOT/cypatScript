@@ -14,9 +14,6 @@ sudo chmod 644 /etc/passwd-
 sudo chmod 644 /etc/group
 sudo chmod 644 /etc/group-
 sudo chmod 644 /etc/shells
-sudo chmod 777 ~/Desktop/backups
-sudo chmod 777 ~/Desktop/backups/group
-sudo chmod 777 ~/Desktop/backups/passwd
 
 # CIS Benchmark
 
@@ -119,33 +116,33 @@ installed" | grep "installed") ]; then
 # Files
 {
     echo "# Audio and Video" >> cypat.log
-	sudo find / -name "*.abs" -type f -delete >> cypat.log
-	sudo find / -name "*.aif*" -type f -delete >> cypat.log
-	sudo find / -name "*.avi" -type f -delete >> cypat.log
-	sudo find / -name "*.m4v" -type f -delete >> cypat.log
-	sudo find / -name "*.mid*" -type f -delete >> cypat.log
-	sudo find / -name "*.mod" -type f -delete >> cypat.log
-	sudo find / -name "*.mov*" -type f -delete >> cypat.log
-    sudo find / -name "*.mp4" -type f -delete >> cypat.log
-    sudo find / -name "*.mp3" -type f -delete >> cypat.log
-	sudo find / -name "*.mp2" -type f -delete >> cypat.log
-	sudo find / -name "*.mpa" -type f -delete >> cypat.log
-	sudo find / -name "*.mpeg*" -type f -delete >> cypat.log
-	sudo find / -name "*.ogg" -type f -delete >> cypat.log
-    sudo find / -name "*.wav" -type f -delete >> cypat.log
+	sudo find / -name "*.abs" >> cypat.log
+	sudo find / -name "*.aiff">> cypat.log
+	sudo find / -name "*.avi" >> cypat.log
+	sudo find / -name "*.m4v" >> cypat.log
+	sudo find / -name "*.mid*" >> cypat.log
+	sudo find / -name "*.mod" >> cypat.log
+	sudo find / -name "*.mov*" >> cypat.log
+    sudo find / -name "*.mp4" >> cypat.log
+    sudo find / -name "*.mp3" >> cypat.log
+	sudo find / -name "*.mp2" >> cypat.log
+	sudo find / -name "*.mpa" >> cypat.log
+	sudo find / -name "*.mpeg" >> cypat.log
+	sudo find / -name "*.ogg" >> cypat.log
+    sudo find / -name "*.wav" >> cypat.log
 
     echo "# Images" >> cypat.log
-    sudo find / -name "*.gif" -type f -delete >> cypat.log
-	sudo find / -name "*.ico" -type f -delete >> cypat.log
-    sudo find / -name "*.im1" -type f -delete >> cypat.log
-    sudo find / -name "*.jp*" -type f -delete >> cypat.log
-    sudo find / -name "*.png" -type f -delete >> cypat.log
-	sudo find / -name "*.svg*" -type f -delete >> cypat.log
+    sudo find / -name "*.gif" >> cypat.log
+	sudo find / -name "*.ico" >> cypat.log
+    sudo find / -name "*.im1" >> cypat.log
+    sudo find / -name "*.jpg" >> cypat.log
+    sudo find / -name "*.png" >> cypat.log
+	sudo find / -name "*.svg*" >> cypat.log
 
     echo "# Others" >> cypat.log
-    sudo find / -name "*.tar.gz" -type f -delete >> cypat.log
-    sudo find / -name "*.php" -type f -delete >> cypat.log
-    sudo find / -name "backdoor*.*" -type f -delete >> cypat.log
+    sudo find / -name "*.tar.gz" >> cypat.log
+    sudo find / -name "*.php" >> cypat.log
+    sudo find / -name "backdoor*.*" >> cypat.log
     sudo find / -nogroup >> cypat.log
 
     echo "\nMake sure to check cypat.log!"
