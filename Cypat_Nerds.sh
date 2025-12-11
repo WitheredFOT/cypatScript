@@ -116,32 +116,6 @@ installed" | grep "installed") ]; then
     sed -i '$a allow_writeable_chroot=NO' /etc/vsftpd.conf
 }
 
-# Lightdm.conf
-{
-    touch /etc/lightdm/lightdm.conf
-    sed -i 's/greeter-hide-users=.*/greeter-hide-users=true/' /etc/lightdm/lightdm.conf
-    sed -i 's/greeter-allow-guest=.*/greeter-allow-guest=false/' /etc/lightdm/lightdm.conf
-    sed -i 's/greeter-show-manual-login=.*/greeter-show-manual-login=true/' /etc/lightdm/lightdm.conf
-    sed -i 's/allow-guest=.*/allow-guest=false/' /etc/lightdm/lightdm.conf
-    sed -i 's/autologin-guest=.*/autologin-guest=false/' /etc/lightdm/lightdm.conf
-    sed -i 's/autologin-user=.*/autologin-user=NONE/' /etc/lightdm/lightdm.conf
-
-    sed -i 's/^# disable-user-.*/disable-user-list=true/' /etc/gdm3/greeter.dconf-defaults
-    sed -i 's/^# disable-restart-.*/disable-restart-buttons=true/' /etc/gdm3/greeter.dconf-defaults
-    sed -i 's/^#  AutomaticLoginEnable.*/AutomaticLoginEnable = false/' /etc/gdm3/custom.conf
-    sed -i '$a allow-guest=false' /etc/lightdm/lightdm.conf
-    sed -i '$a greeter-hide-users=true' /etc/lightdm/lightdm.conf
-    sed -i '$a greeter-show-manual-login=true' /etc/lightdm/lightdm.conf
-    
-    sed -i 's/autologin-user=.*/autologin-user=none/' /etc/lightdm/lightdm.conf
-
-    sed -i '$a [org/gnome/login-screen]' /etc/dconf/db/gdm.d/01-hide-users
-    sed -i '$a banner-message-enable=true'/etc/dconf/db/gdm.d/01-hide-users
-    sed -i '$a banner-message-text="This is a restricted server xd."' /etc/dconf/db/gdm.d/01-hide-users
-    sed -i '$a disable-restart-buttons=true' /etc/dconf/db/gdm.d/01-hide-users
-    sed -i '$a disable-user-list=true' /etc/dconf/db/gdm.d/01-hide-users
-}
-
 # Files
 {
     echo "# Audio and Video" >> cypat.log
