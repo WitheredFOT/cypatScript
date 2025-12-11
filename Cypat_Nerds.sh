@@ -117,12 +117,9 @@ installed" | grep "installed") ]; then
 	sudo find / -name "*.aiff">> cypat.log
 	sudo find / -name "*.avi" >> cypat.log
 	sudo find / -name "*.m4v" >> cypat.log
-	sudo find / -name "*.mid*" >> cypat.log
-	sudo find / -name "*.mod" >> cypat.log
 	sudo find / -name "*.mov*" >> cypat.log
     sudo find / -name "*.mp4" >> cypat.log
     sudo find / -name "*.mp3" >> cypat.log
-	sudo find / -name "*.mp2" >> cypat.log
 	sudo find / -name "*.mpa" >> cypat.log
 	sudo find / -name "*.mpeg" >> cypat.log
 	sudo find / -name "*.ogg" >> cypat.log
@@ -131,10 +128,8 @@ installed" | grep "installed") ]; then
     echo "# Images" >> cypat.log
     sudo find / -name "*.gif" >> cypat.log
 	sudo find / -name "*.ico" >> cypat.log
-    sudo find / -name "*.im1" >> cypat.log
     sudo find / -name "*.jpg" >> cypat.log
     sudo find / -name "*.png" >> cypat.log
-	sudo find / -name "*.svg*" >> cypat.log
 
     echo "# Others" >> cypat.log
     sudo find / -name "*.tar.gz" >> cypat.log
