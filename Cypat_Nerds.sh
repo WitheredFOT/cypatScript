@@ -3,8 +3,6 @@ clear
 echo "Created by DanSavageGames. CA, USA"
 
 # chmod stuff
-sudo chmod 600 /boot/grub/grub.cfg
-sudo chmod 600 /etc/security/opasswd
 sudo chmod 640 /etc/shadow
 sudo chmod 640 /etc/shadow-
 sudo chmod 640 /etc/gshadow
@@ -13,7 +11,6 @@ sudo chmod 644 /etc/passwd
 sudo chmod 644 /etc/passwd-
 sudo chmod 644 /etc/group
 sudo chmod 644 /etc/group-
-sudo chmod 644 /etc/shells
 
 # CIS Benchmark
 
