@@ -1,3 +1,7 @@
+#!/bin/bash
+clear
+echo "Created by DanSavageGames. CA, USA"
+
 # chmod stuff
 sudo chmod 600 /boot/grub/grub.cfg
 sudo chmod 600 /etc/security/opasswd
@@ -10,6 +14,9 @@ sudo chmod 644 /etc/passwd-
 sudo chmod 644 /etc/group
 sudo chmod 644 /etc/group-
 sudo chmod 644 /etc/shells
+sudo chmod 777 ~/Desktop/backups
+sudo chmod 777 ~/Desktop/backups/group
+sudo chmod 777 ~/Desktop/backups/passwd
 
 # CIS Benchmark
 
@@ -137,22 +144,34 @@ installed" | grep "installed") ]; then
 
 # Files
 {
-    echo "# Audio" >> cypat.log
-    sudo find / -name "*.mp4" >> cypat.log
-    sudo find / -name "*.mp3" >> cypat.log
-    sudo find / -name "*.mov" >> cypat.log
-    sudo find / -name "*.wav" >> cypat.log
+    echo "# Audio and Video" >> cypat.log
+	sudo find / -name "*.abs" -type f -delete >> cypat.log
+	sudo find / -name "*.aif*" -type f -delete >> cypat.log
+	sudo find / -name "*.avi" -type f -delete >> cypat.log
+	sudo find / -name "*.m4v" -type f -delete >> cypat.log
+	sudo find / -name "*.mid*" -type f -delete >> cypat.log
+	sudo find / -name "*.mod" -type f -delete >> cypat.log
+	sudo find / -name "*.mov*" -type f -delete >> cypat.log
+    sudo find / -name "*.mp4" -type f -delete >> cypat.log
+    sudo find / -name "*.mp3" -type f -delete >> cypat.log
+	sudo find / -name "*.mp2" -type f -delete >> cypat.log
+	sudo find / -name "*.mpa" -type f -delete >> cypat.log
+	sudo find / -name "*.mpeg*" -type f -delete >> cypat.log
+	sudo find / -name "*.ogg" -type f -delete >> cypat.log
+    sudo find / -name "*.wav" -type f -delete >> cypat.log
 
     echo "# Images" >> cypat.log
-    sudo find / -name "*.gif" >> cypat.log
-    sudo find / -name "*.jpg" >> cypat.log
-    sudo find / -name "*.jpeg" >> cypat.log
-    sudo find / -name "*.png" >> cypat.log
+    sudo find / -name "*.gif" -type f -delete >> cypat.log
+	sudo find / -name "*.ico" -type f -delete >> cypat.log
+    sudo find / -name "*.im1" -type f -delete >> cypat.log
+    sudo find / -name "*.jp*" -type f -delete >> cypat.log
+    sudo find / -name "*.png" -type f -delete >> cypat.log
+	sudo find / -name "*.svg*" -type f -delete >> cypat.log
 
     echo "# Others" >> cypat.log
-    sudo find / -name "*.tar.gz" >> cypat.log
-    sudo find / -name "*.php" >> cypat.log
-    sudo find / -name "backdoor*.*" >> cypat.log
+    sudo find / -name "*.tar.gz" -type f -delete >> cypat.log
+    sudo find / -name "*.php" -type f -delete >> cypat.log
+    sudo find / -name "backdoor*.*" -type f -delete >> cypat.log
     sudo find / -nogroup >> cypat.log
 
     echo "\nMake sure to check cypat.log!"
@@ -198,7 +217,7 @@ installed" | grep "installed") ]; then
 
 # Hacking tools
 {
-    sudo apt autoremove john hydra samba hashcat nmap zenmap lighttpd netcat-traditional nikto ophcrack squid medusa maltego burp-suite spiderfoot qbittorrent deluge transmission-gtk transmission aircrack-ng
+    sudo apt autoremove john hydra samba hashcat nmap zenmap lighttpd netcat-traditional nikto ophcrack squid medusa maltego burp-suite spiderfoot qbittorrent deluge transmission-gtk transmission aircrack-ng netcat-openbsd ncat pnetcat socat sock socket sbd john-data hydra-gtk fcrackzip lcrack pdfcrack pyrit rarcrack sipcrack irpas zeitgeist-core zeitgeist-datahub python-zeitgeist rhythmbox-plugin-zeitgeist zeitgeist
     wait
     read -p "Keep nginx? [y/n]: " keepNginx
     read -p "Keep apache? [y/n]: " keepApache
@@ -234,6 +253,7 @@ installed" | grep "installed") ]; then
     wait
     sudo ufw enable
     sudo ufw allow http
+	sudo ufw allow https
     sudo ufw default deny incoming
     sudo ufw default allow outgoing
     read -p "Allow SSH? [y/n]: " a
