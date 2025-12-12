@@ -180,7 +180,7 @@ installed" | grep "installed") ]; then
 
 # Hacking tools
 {
-    sudo apt autoremove john hydra samba hashcat nmap zenmap lighttpd netcat-traditional nikto ophcrack squid medusa maltego burp-suite spiderfoot qbittorrent deluge transmission-gtk transmission aircrack-ng netcat-openbsd ncat pnetcat socat sock socket sbd john-data hydra-gtk fcrackzip lcrack pdfcrack pyrit rarcrack sipcrack irpas zeitgeist-core zeitgeist-datahub python-zeitgeist rhythmbox-plugin-zeitgeist zeitgeist
+    sudo apt autoremove john hydra samba hashcat nmap zenmap lighttpd netcat-traditional nikto ophcrack squid medusa qbittorrent deluge transmission-gtk transmission aircrack-ng netcat-openbsd ncat socat sbd john-data hydra-gtk fcrackzip pdfcrack rarcrack sipcrack irpas zeitgeist-core zeitgeist-datahub rhythmbox-plugin-zeitgeist zeitgeist
     wait
     read -p "Keep nginx? [y/n]: " keepNginx
     read -p "Keep apache? [y/n]: " keepApache
