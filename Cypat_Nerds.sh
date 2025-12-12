@@ -221,9 +221,9 @@ installed" | grep "installed") ]; then
     sudo ufw default allow outgoing
     read -p "Allow SSH? [y/n]: " a
     if [ $a = y ]; then
-        ufw allow ssh
+        sudo ufw allow ssh
     else
-        ufw deny ssh
+        sudo ufw deny ssh
     fi
 }
 
